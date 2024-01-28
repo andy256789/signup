@@ -5,13 +5,20 @@
 
 :root{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    --invalid: #ff4444;
+    --color-invalid: #ff4444;
+    --input-border: #333333;
+    --focused: #0075be;
+    --form-background: #eeeeee;
 }
 
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+*:focus{
+    outline: none;
 }
 
 body{
@@ -67,30 +74,58 @@ body{
 }
 
 .text{
+    flex: 1;
     width: 70%;
     margin-left: 5rem;
 }
 
+.form{
+    flex: 2;
+}
+
 .form > form > ul{
+    padding: 2rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(221, 221, 221);
+    background-color: var(--form-background);
+    box-shadow: 0 20px 20px #afafaf;
     list-style: none;
-}
-
-label{
-    display: block;
-    width: fit-content;
-    border: 1px solid black;
 }
 
 .form > form > ul >li{
     width: 70%;
     margin-left: 5rem;
-    
+    display: flex;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 3rem 0 0;
+}
+
+.item > input{
+    font-size: 1.5rem;
+    width: 400px;
+    padding:0.5rem 1rem;
+    border: 2px solid var(--input-border);
+    border-radius: 10px;
+}
+
+input:focus{
+    border-color: var(--focused);
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+  border-color: var(--color-invalid);
 }
 
 .button{
     margin-left: 5rem;
+}
+
+.button > button{
+    font-size: 2.5rem;
+    padding: 1rem;
 }
