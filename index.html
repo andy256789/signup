@@ -52,22 +52,23 @@
                         </div>
                         <div class="item">
                             <label for="phone">PHONE NUMBER</label>
-                            <input type="tel" id="phone" name="phone" placeholder=" " required>
+                            <input type="tel" id="phone" name="phone" placeholder=" ">
                         </div>
                     </li>
                     <li>
-                        <div class="item error">
+                        <div class="item">
                             <label for="password">PASSWORD</label>
                             <input type="password" id="password" name="password" placeholder=" " required>
+                            <div class="error_message"></div>
                         </div>
-                        <div class="item error">
+                        <div class="item">
                             <label for="confirm_password">CONFIRM PASSWORD</label>
                             <input type="password" id="confirm_password" name="confirm_password" placeholder=" " required>
                         </div>
                     </li>
                 </ul>
                 <div class="button">
-                    <button type="submit">Create Account</button>
+                    <button type="submit" class="submitButton">Create Account</button>
                     <div class="login">Already have an account? <span>Log in</span></div>
                 </div>
             </form>

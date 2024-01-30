@@ -30,18 +30,17 @@
 body {
     height: 100vh;
     display: flex;
-    flex-wrap: wrap;
     background-color: var(--background);
 }
 
 .background {
     display: flex;
     flex: none;
-    height: 100vh;
-    width: 34%;
+    height: 100%;
+    width: clamp(500px,34vw, 1200px);
     background-image: url(images/jelly.jpg);
-    background-size: cover;
     flex-direction: column;
+    background-size: 100% 100%;
     justify-content: space-between;
     align-items: center;
 }
@@ -143,11 +142,11 @@ body {
     color: var(--label-color);
 }
 
-.item>input {
+input {
     font-size: 1.5rem;
     width: 400px;
     padding: 0.5rem 1rem;
-    margin-top: 1rem;
+    margin-top: 5px;
     border: 1px solid var(--input-border);
     border-radius: 5px;
 }
@@ -189,4 +188,13 @@ input:not(:focus):not(:placeholder-shown):invalid {
 .login > span{
     cursor: pointer;
     color: var(--button-background);
+}
+
+.error{
+    border-color: var(--color-invalid);
+}
+
+.error_message{
+    height: 1rem;
+    color: var(--color-invalid);
 }
